@@ -5,14 +5,19 @@ using UnityEngine.XR;
 
 public class HandPresence : MonoBehaviour
 {
+    public bool showController = false;
     private InputDevice targetDevice;
+    public List<GameObject> controllerPrefabs;
+    public GameObject handModelPrefab;
+    private GameObject spawnedHandModel;
+    private GameObject spawnedController;
+    public InputDeviceCharacteristics controllerCharacteristics;
+    
     // Start is called before the first frame update
     void Start()
     {
         List<InputDevice> devices = new List<InputDevice>();
-        InputDeviceCharacteristics rightControllerCharacteristics =
-            InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-        InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
+        InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
         
         foreach (var item in devices)
         {
@@ -22,12 +27,35 @@ public class HandPresence : MonoBehaviour
         if (devices.Count > 0)
         {
             targetDevice = devices[0];
+            /*GameObject prefab = controllerPrefabs.Find(controller => controller.name == targetDevice.name);
+            if (prefab)
+            {
+                spawnedController = Instantiate(prefab, transform);
+            }
+            else
+            {
+                Debug.LogError("Did not find controller");
+                spawnedController = Instantiate(controllerPrefabs[0], transform);
+            }*/
+
+            spawnedHandModel = Instantiate(handModelPrefab, transform);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*if (showController)
+        {
+            spawnedHandModel.SetActive(false);
+            spawnedController.SetActive(true);
+        }
+        else
+        {
+            spawnedHandModel.SetActive(true);
+            spawnedController.SetActive(false);
+        }*/
+        
         if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
         {
             Debug.Log("Pressing primary button");
