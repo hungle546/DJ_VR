@@ -16,31 +16,7 @@ public class HandPresence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        List<InputDevice> devices = new List<InputDevice>();
-        InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
-        
-        foreach (var item in devices)
-        {
-            Debug.Log(item.name + item.characteristics);
-        }
-
-        if (devices.Count > 0)
-        {
-            targetDevice = devices[0];
-            /*GameObject prefab = controllerPrefabs.Find(controller => controller.name == targetDevice.name);
-            if (prefab)
-            {
-                spawnedController = Instantiate(prefab, transform);
-            }
-            else
-            {
-                Debug.LogError("Did not find controller");
-                spawnedController = Instantiate(controllerPrefabs[0], transform);
-            }*/
-
-            spawnedHandModel = Instantiate(handModelPrefab, transform);
-            handAnimator = spawnedHandModel.GetComponent<Animator>();
-        }
+        TryInitialize();
     }
 
     // Update is called once per frame
@@ -102,6 +78,35 @@ public class HandPresence : MonoBehaviour
         else
         {
             handAnimator.SetFloat("Grip", 0);
+        }
+    }
+
+    void TryInitialize()
+    {
+        List<InputDevice> devices = new List<InputDevice>();
+        InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
+        
+        foreach (var item in devices)
+        {
+            Debug.Log(item.name + item.characteristics);
+        }
+
+        if (devices.Count > 0)
+        {
+            targetDevice = devices[0];
+            /*GameObject prefab = controllerPrefabs.Find(controller => controller.name == targetDevice.name);
+            if (prefab)
+            {
+                spawnedController = Instantiate(prefab, transform);
+            }
+            else
+            {
+                Debug.LogError("Did not find controller");
+                spawnedController = Instantiate(controllerPrefabs[0], transform);
+            }*/
+
+            spawnedHandModel = Instantiate(handModelPrefab, transform);
+            handAnimator = spawnedHandModel.GetComponent<Animator>();
         }
     }
 }
