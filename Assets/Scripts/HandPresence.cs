@@ -12,7 +12,7 @@ public class HandPresence : MonoBehaviour
     private GameObject spawnedHandModel;
     private GameObject spawnedController;
     public InputDeviceCharacteristics controllerCharacteristics;
-    
+    private Animator handAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +39,7 @@ public class HandPresence : MonoBehaviour
             }*/
 
             spawnedHandModel = Instantiate(handModelPrefab, transform);
+            handAnimator = spawnedHandModel.GetComponent<Animator>();
         }
     }
 
@@ -55,8 +56,8 @@ public class HandPresence : MonoBehaviour
             spawnedHandModel.SetActive(true);
             spawnedController.SetActive(false);
         }*/
-        
-        if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
+        UpdateHandAnimation();
+        /*if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
         {
             Debug.Log("Pressing primary button");
         }
@@ -79,6 +80,28 @@ public class HandPresence : MonoBehaviour
         if (targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue) && primary2DAxisValue != Vector2.zero)
         {
             Debug.Log("Primary Touchpad " + primary2DAxisValue);
+        }*/
+    }
+
+    void UpdateHandAnimation()
+    {
+        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
+        {
+            handAnimator.SetFloat("Trigger", triggerValue);
+            Debug.Log("hello");
+        }
+        else
+        {
+            handAnimator.SetFloat("Trigger", 0);
+        }
+        
+        if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
+        {
+            handAnimator.SetFloat("Grip", gripValue);
+        }
+        else
+        {
+            handAnimator.SetFloat("Grip", 0);
         }
     }
 }
