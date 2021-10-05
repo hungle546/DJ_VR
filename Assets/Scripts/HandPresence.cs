@@ -64,7 +64,6 @@ public class HandPresence : MonoBehaviour
         if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
         {
             handAnimator.SetFloat("Trigger", triggerValue);
-            Debug.Log("hello");
         }
         else
         {
