@@ -43,7 +43,7 @@ public class handButton : XRBaseInteractable
 
     private void start()
     {
-        
+        setMinMax();
     }
 
     private void setMinMax()
@@ -94,6 +94,7 @@ public class handButton : XRBaseInteractable
         }
 
         previousPressed = inPosition;
+        Debug.Log("button Pressed");
     }
 
     private bool inPosition()
