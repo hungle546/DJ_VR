@@ -38,6 +38,7 @@ public class handButton : XRBaseInteractable
         previousHandHeight = 0.0f;
 
         previousPressed = false;
+        
         SetYPosition(ymax);
     }
 
@@ -99,7 +100,7 @@ public class handButton : XRBaseInteractable
 
     private bool inPosition()
     {
-        float inRange = Mathf.Clamp(transform.localPosition.y,ymin,ymax);
+        float inRange = Mathf.Clamp(transform.localPosition.y,ymin,ymin + 0.01f);
         return transform.localPosition.y == inRange;
         
     }
