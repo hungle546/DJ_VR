@@ -13,7 +13,7 @@ public class handButton : XRBaseInteractable
     private XRBaseInteractor hoverInteractor = null;
     private float ymin = 0.0f;
     private float ymax = 0.0f;
-
+    private bool isPlaySound = false;
 
     protected override void OnHoverEntered(HoverEnterEventArgs args)
     {
@@ -100,8 +100,12 @@ public class handButton : XRBaseInteractable
 
         previousPressed = inPosition;
         Debug.Log("button Pressed");
-        audio.PlayOneShot(audio.clip,0.1f);
-        
+        if (!isPlaySound)
+        {
+            audio.PlayOneShot(audio.clip,0.1f);
+            isPlaySound = true;
+        }
+
     }
 
     private bool inPosition()
