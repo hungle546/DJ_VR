@@ -33,7 +33,6 @@ public class SliderController : MonoBehaviour
         }
         else if (transform.localPosition.x < 0.475 && transform.localPosition.x > -0.475)
         {
-            //Debug.Log("zero");
             VolumeCalculator();
         }
     }
@@ -42,7 +41,7 @@ public class SliderController : MonoBehaviour
     {
         double volPercent = transform.localPosition.x / 0.475;
         volumePercent = Convert.ToSingle(volPercent);
-        Debug.Log(volumePercent);
+        //Debug.Log(volumePercent);
         discCon.AudjustVolume(volumePercent);
     }
 }

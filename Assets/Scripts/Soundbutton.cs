@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,8 +16,6 @@ public class Soundbutton : XRBaseInteractable
     private float ymin = 0.0f;
     private float ymax = 0.0f;
     private bool isPlaySound = false;
-
-    [SerializeField] private DiscController discCon;
 
     protected override void OnHoverEntered(HoverEnterEventArgs args)
     {
@@ -103,14 +102,20 @@ public class Soundbutton : XRBaseInteractable
 
         previousPressed = inPosition;
         Debug.Log("button Pressed");
+        Debug.Log(isPlaySound);
         if (!isPlaySound)
         {
             sound.PlayOneShot(sound.clip,0.5f);
-            discCon.PlayBoth();
             isPlaySound = true;
-            
+            StartCoroutine("PressDelay");
         }
 
+    }
+
+    private IEnumerator PressDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        isPlaySound = false;
     }
 
     private bool inPosition()

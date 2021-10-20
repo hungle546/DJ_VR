@@ -29,13 +29,13 @@ public class DiscController : MonoBehaviour
 
     public void SpinLeft()
     {
-        Debug.Log("spinning left");
+        //Debug.Log("spinning left");
         leftRotation.Rotate(Vector3.up * spinSpeed * Time.deltaTime);
     }
     
     public void SpinRight()
     {
-        Debug.Log("spinning right");
+        //Debug.Log("spinning right");
         rightRotation.Rotate(Vector3.up * spinSpeed * Time.deltaTime);
     }
 
@@ -69,15 +69,17 @@ public class DiscController : MonoBehaviour
 
     public void AudjustVolume(float percent)
     {
+        //rightAudio.volume = 0.1f + percent;
+        //leftAudio.volume = 0.1f - percent;
         if (percent > 0)
         {
             rightAudio.volume = 0.1f + percent;
-            leftAudio.volume = 0.1f - percent;
+            leftAudio.volume = 0.1f;
         }
         else if (percent < 0)
         {
-            rightAudio.volume = 0.1f + percent;
             leftAudio.volume = 0.1f - percent;
+            rightAudio.volume = 0.1f;
         }
     }
 }
