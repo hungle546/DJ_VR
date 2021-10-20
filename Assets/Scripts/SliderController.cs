@@ -5,6 +5,7 @@ using UnityEngine;
 public class SliderController : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private DiscController discCon;
     void Start()
     {
         
@@ -13,18 +14,24 @@ public class SliderController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckSide();
+        //CheckSide();
     }
 
     private void CheckSide()
     {
-        if (transform.position.x < 0)
+        if (transform.localPosition.x < 0)
         {
             Debug.Log("left side");
+            discCon.SpinLeft();
         }
-        else
+        else if (transform.localPosition.x > 0)
         {
-            Debug.Log("right side");
+            Debug.Log("right side "+ transform.localPosition.x);
+            discCon.SpinRight();
+        }
+        else if (transform.localPosition.x == 0)
+        {
+            //Debug.Log("zero");
         }
     }
 }
