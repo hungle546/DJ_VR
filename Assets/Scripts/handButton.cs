@@ -15,6 +15,8 @@ public class handButton : XRBaseInteractable
     private float ymax = 0.0f;
     private bool isPlaySound = false;
 
+    [SerializeField] private DiscController discCon;
+
     protected override void OnHoverEntered(HoverEnterEventArgs args)
     {
         base.OnHoverEntered(args);
@@ -89,7 +91,7 @@ public class handButton : XRBaseInteractable
 
     private void CheckPress()
     {
-        AudioSource audio = GetComponent<AudioSource>();
+        //AudioSource audio = GetComponent<AudioSource>();
         
         bool inPosition = this.inPosition();
 
@@ -102,8 +104,10 @@ public class handButton : XRBaseInteractable
         Debug.Log("button Pressed");
         if (!isPlaySound)
         {
-            audio.PlayOneShot(audio.clip,0.5f);
+            //audio.PlayOneShot(audio.clip,0.5f);
+            discCon.PlayBoth();
             isPlaySound = true;
+            
         }
 
     }
