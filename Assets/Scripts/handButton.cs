@@ -29,6 +29,7 @@ public class handButton : XRBaseInteractable
     {
         hoverInteractor = interactor;
         previousHandHeight = GetLocalYPosition(hoverInteractor.transform.position);
+        
 
     }
 
@@ -80,7 +81,7 @@ public class handButton : XRBaseInteractable
     private void SetYPosition(float position)
     {
         Vector3 newPosition = transform.localPosition;
-        newPosition.y = Mathf.Clamp(position, ymin, ymax);
+        //newPosition.y = Mathf.Clamp(position, ymin, ymax);
         transform.localPosition = newPosition;
         
     }

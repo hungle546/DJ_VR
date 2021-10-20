@@ -172,7 +172,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.99998474, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1.0800002, y: 1.6566998, z: -6.412}
+  m_ConnectedAnchor: {x: 1.0800002, y: 1.9204508, z: -6.412}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 0
@@ -572,7 +572,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187634403}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.566, y: -0.504, z: -6.796}
+  m_LocalPosition: {x: 2.359, y: -0.757, z: -6.687}
   m_LocalScale: {x: 0.09, y: 0.03, z: 0.09}
   m_Children: []
   m_Father: {fileID: 609383827}
@@ -956,7 +956,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.5, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.9139817, y: 1.502949, z: -6.6391954}
+  m_ConnectedAnchor: {x: 0.9139817, y: 1.7667, z: -6.6391954}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 1
@@ -1637,7 +1637,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609383826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2458184, y: 2.246249, z: 0.41480443}
+  m_LocalPosition: {x: -2.2458184, y: 2.51, z: 0.41480443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414570697}
@@ -2747,7 +2747,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.69499993, y: 1.5189999, z: -6.412}
+  m_ConnectedAnchor: {x: 0.69499993, y: 1.782751, z: -6.412}
   m_UseSpring: 0
   m_Spring:
     spring: 0
