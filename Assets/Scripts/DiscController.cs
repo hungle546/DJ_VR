@@ -54,4 +54,30 @@ public class DiscController : MonoBehaviour
         PlayLeft();
         PlayRight();
     }
+
+    public void MuteLeft()
+    {
+        leftAudio.volume = 0f;
+        rightAudio.volume = 0.2f;
+    }
+    
+    public void MuteRight()
+    {
+        rightAudio.volume = 0f;
+        leftAudio.volume = 0.2f;
+    }
+
+    public void AudjustVolume(float percent)
+    {
+        if (percent > 0)
+        {
+            rightAudio.volume = 0.1f + percent;
+            leftAudio.volume = 0.1f - percent;
+        }
+        else if (percent < 0)
+        {
+            rightAudio.volume = 0.1f + percent;
+            leftAudio.volume = 0.1f - percent;
+        }
+    }
 }
