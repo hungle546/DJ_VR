@@ -23,12 +23,12 @@ public class SliderController : MonoBehaviour
     {
         if (transform.localPosition.x < -0.474)
         {
-            Debug.Log("left side");
+            //Debug.Log("left side");
             discCon.MuteRight();
         }
         else if (transform.localPosition.x > 0.475 && transform.localPosition.x < 0.5)
         {
-            Debug.Log("right side "+ transform.localPosition.x);
+            //Debug.Log("right side "+ transform.localPosition.x);
             discCon.MuteLeft();
         }
         else if (transform.localPosition.x < 0.475 && transform.localPosition.x > -0.475)

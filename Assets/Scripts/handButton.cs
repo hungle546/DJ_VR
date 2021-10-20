@@ -18,6 +18,7 @@ public class handButton : XRBaseInteractable
     private Animator ac; 
 
     [SerializeField] private DiscController discCon;
+    [SerializeField] private GameObject crowd;
 
     protected override void OnHoverEntered(HoverEnterEventArgs args)
     {
@@ -48,9 +49,9 @@ public class handButton : XRBaseInteractable
         SetYPosition(ymax);
     }
 
-    private void start()
+    void Start()
     {
-        ac = GetComponent<Animator>();
+        ac = crowd.GetComponent<Animator>();
         setMinMax();
     }
 
@@ -104,12 +105,13 @@ public class handButton : XRBaseInteractable
         }
 
         previousPressed = inPosition;
-        Debug.Log("button Pressed");
+        //Debug.Log("button Pressed");
         if (!isPlaySound)
         {
             if (!discCon.GetIsPlaying())
             {
                 discCon.PlayBoth();
+                Debug.Log("starting music");
                 isPlaySound = true;
                 ac.SetBool("isDance", true);
                 ac.SetBool("IsIdle", false);
@@ -118,6 +120,7 @@ public class handButton : XRBaseInteractable
             else if (discCon.GetIsPlaying())
             {
                 discCon.StopBoth();
+                Debug.Log("stopping music");
                 isPlaySound = true;
                 ac.SetBool("IsIdle", true);
                 ac.SetBool("isDance", false);
