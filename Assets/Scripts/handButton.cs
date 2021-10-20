@@ -15,6 +15,7 @@ public class handButton : XRBaseInteractable
     private float ymin = 0.0f;
     private float ymax = 0.0f;
     private bool isPlaySound = false;
+    private Animator ac; 
 
     [SerializeField] private DiscController discCon;
 
@@ -49,6 +50,7 @@ public class handButton : XRBaseInteractable
 
     private void start()
     {
+        ac = GetComponent<Animator>();
         setMinMax();
     }
 
@@ -109,12 +111,16 @@ public class handButton : XRBaseInteractable
             {
                 discCon.PlayBoth();
                 isPlaySound = true;
+                ac.SetBool("isDance", true);
+                ac.SetBool("IsIdle", false);
                 StartCoroutine("PressDelay");
             }
             else if (discCon.GetIsPlaying())
             {
                 discCon.StopBoth();
                 isPlaySound = true;
+                ac.SetBool("IsIdle", true);
+                ac.SetBool("isDance", false);
                 StartCoroutine("PressDelay");
             }
         }
