@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class handButton : XRBaseInteractable
+public class Soundbutton : XRBaseInteractable
 
 {
+    
     public UnityEvent onPress = null;
     private bool previousPressed = false;
     private float previousHandHeight = 0.9f;
@@ -91,7 +92,7 @@ public class handButton : XRBaseInteractable
 
     private void CheckPress()
     {
-       // AudioSource audio = GetComponent<AudioSource>();
+        AudioSource sound = GetComponent<AudioSource>();
         
         bool inPosition = this.inPosition();
 
@@ -104,7 +105,7 @@ public class handButton : XRBaseInteractable
         Debug.Log("button Pressed");
         if (!isPlaySound)
         {
-            //audio.PlayOneShot(audio.clip,0.5f);
+            sound.PlayOneShot(sound.clip,0.5f);
             discCon.PlayBoth();
             isPlaySound = true;
             
