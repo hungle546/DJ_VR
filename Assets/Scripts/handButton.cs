@@ -102,7 +102,7 @@ public class handButton : XRBaseInteractable
         Debug.Log("button Pressed");
         if (!isPlaySound)
         {
-            audio.PlayOneShot(audio.clip,0.1f);
+            audio.PlayOneShot(audio.clip,0.5f);
             isPlaySound = true;
         }
 
