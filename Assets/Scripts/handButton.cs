@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -104,12 +105,25 @@ public class handButton : XRBaseInteractable
         Debug.Log("button Pressed");
         if (!isPlaySound)
         {
-            //audio.PlayOneShot(audio.clip,0.5f);
-            discCon.PlayBoth();
-            isPlaySound = true;
-            
+            if (!discCon.GetIsPlaying())
+            {
+                discCon.PlayBoth();
+                isPlaySound = true;
+                StartCoroutine("PressDelay");
+            }
+            else if (discCon.GetIsPlaying())
+            {
+                discCon.StopBoth();
+                isPlaySound = true;
+                StartCoroutine("PressDelay");
+            }
         }
-
+    }
+    
+    private IEnumerator PressDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        isPlaySound = false;
     }
 
     private bool inPosition()

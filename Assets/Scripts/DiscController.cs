@@ -11,6 +11,7 @@ public class DiscController : MonoBehaviour
     private float spinSpeed = 80f;
     private AudioSource leftAudio;
     private AudioSource rightAudio;
+    private bool isPlaying = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,12 +40,12 @@ public class DiscController : MonoBehaviour
         rightRotation.Rotate(Vector3.up * spinSpeed * Time.deltaTime);
     }
 
-    public void PlayLeft()
+    private void PlayLeft()
     {
         leftAudio.PlayOneShot(leftAudio.clip);
     }
 
-    public void PlayRight()
+    private void PlayRight()
     {
         rightAudio.PlayOneShot(rightAudio.clip);
     }
@@ -53,6 +54,14 @@ public class DiscController : MonoBehaviour
     {
         PlayLeft();
         PlayRight();
+        isPlaying = true;
+    }
+
+    public void StopBoth()
+    {
+        leftAudio.Stop();
+        rightAudio.Stop();
+        isPlaying = false;
     }
 
     public void MuteLeft()
@@ -81,5 +90,10 @@ public class DiscController : MonoBehaviour
             leftAudio.volume = 0.1f - percent;
             rightAudio.volume = 0.1f;
         }
+    }
+
+    public bool GetIsPlaying()
+    {
+        return isPlaying;
     }
 }
