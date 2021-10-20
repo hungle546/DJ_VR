@@ -13,8 +13,7 @@ public class handButton : XRBaseInteractable
     private XRBaseInteractor hoverInteractor = null;
     private float ymin = 0.0f;
     private float ymax = 0.0f;
-    private AudioSource audioSource;
-    
+
 
     protected override void OnHoverEntered(HoverEnterEventArgs args)
     {
@@ -48,7 +47,6 @@ public class handButton : XRBaseInteractable
     private void start()
     {
         setMinMax();
-       // AudioSource.GetComponent<AudioSource>();
     }
 
     private void setMinMax()
@@ -91,6 +89,8 @@ public class handButton : XRBaseInteractable
 
     private void CheckPress()
     {
+        AudioSource audio = GetComponent<AudioSource>();
+        
         bool inPosition = this.inPosition();
 
         if (inPosition && inPosition != previousPressed)
@@ -100,7 +100,7 @@ public class handButton : XRBaseInteractable
 
         previousPressed = inPosition;
         Debug.Log("button Pressed");
-        
+        audio.PlayOneShot(audio.clip,0.1f);
         
     }
 
