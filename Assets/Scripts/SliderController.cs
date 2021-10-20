@@ -44,4 +44,9 @@ public class SliderController : MonoBehaviour
         //Debug.Log(volumePercent);
         discCon.AudjustVolume(volumePercent);
     }
+
+    public float GetPosition()
+    {
+        return transform.localPosition.x;
+    }
 }
