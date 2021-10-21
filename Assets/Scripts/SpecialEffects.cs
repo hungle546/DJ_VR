@@ -9,7 +9,6 @@ public class SpecialEffects : XRBaseInteractable
 {
     
     [SerializeField] private GameObject particles;
-    private ParticleSystem ps;
     public UnityEvent onPress = null;
     private bool previousPressed = false;
     private float previousHandHeight = 0.9f;
@@ -48,9 +47,9 @@ public class SpecialEffects : XRBaseInteractable
         
     }
 
-    private void start()
+    void Start()
     {
-        ps.Pause();
+        Debug.Log("hi");
         particles.SetActive(false);
         setMinMax();
     }
@@ -103,14 +102,11 @@ public class SpecialEffects : XRBaseInteractable
         {
             onPress.Invoke();
         }
-        ps.Play();
         particles.SetActive(true);
         previousPressed = inPosition;
-        Debug.Log("button Pressed");
-        Debug.Log(isPlaySound);
         if (!isPlaySound)
         {
-            sound.PlayOneShot(sound.clip,0.5f);
+            particles.SetActive(true);
             isPlaySound = true;
             StartCoroutine("PressDelay");
         }
@@ -119,10 +115,9 @@ public class SpecialEffects : XRBaseInteractable
 
     private IEnumerator PressDelay()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
         isPlaySound = false;
         particles.SetActive(false);
-        ps.Pause();
     }
 
     private bool inPosition()
