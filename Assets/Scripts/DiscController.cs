@@ -67,13 +67,13 @@ public class DiscController : MonoBehaviour
     public void MuteLeft()
     {
         leftAudio.volume = 0f;
-        rightAudio.volume = 0.2f;
+        rightAudio.volume = 0.7f;
     }
     
     public void MuteRight()
     {
         rightAudio.volume = 0f;
-        leftAudio.volume = 0.2f;
+        leftAudio.volume = 0.7f;
     }
 
     public void AudjustVolume(float percent)
