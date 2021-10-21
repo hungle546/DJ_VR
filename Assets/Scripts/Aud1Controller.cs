@@ -19,8 +19,6 @@ public class Aud1Controller : MonoBehaviour
         {
             // GameObject CoinClone = Instantiate(coinOriginal);
             GameObject audClone = Instantiate(audOriginal, new Vector3(i * 0.6f, audOriginal.transform.position.y, i * 0.75f), audOriginal.transform.rotation);
-            audClone.name = "CoinClone-" + (i + 1);
-            audClone.transform.parent = audCount.transform;
         }
     }
 }
