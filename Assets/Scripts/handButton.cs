@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
+using Random = UnityEngine.Random;
 
 public class handButton : XRBaseInteractable
 
@@ -113,6 +114,7 @@ public class handButton : XRBaseInteractable
                 discCon.PlayBoth();
                 Debug.Log("starting music");
                 isPlaySound = true;
+                ac.SetInteger("DanceIndex", Random.Range(0,3));
                 ac.SetBool("isDance", true);
                 ac.SetBool("IsIdle", false);
                 StartCoroutine("PressDelay");
@@ -122,8 +124,8 @@ public class handButton : XRBaseInteractable
                 discCon.StopBoth();
                 Debug.Log("stopping music");
                 isPlaySound = true;
-                ac.SetBool("IsIdle", true);
                 ac.SetBool("isDance", false);
+                ac.SetBool("IsIdle", true);
                 StartCoroutine("PressDelay");
             }
         }
