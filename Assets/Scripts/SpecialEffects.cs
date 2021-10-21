@@ -106,6 +106,7 @@ public class SpecialEffects : XRBaseInteractable
         previousPressed = inPosition;
         if (!isPlaySound)
         {
+            sound.PlayOneShot(sound.clip,0.5f);
             particles.SetActive(true);
             isPlaySound = true;
             StartCoroutine("PressDelay");
