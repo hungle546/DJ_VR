@@ -122,7 +122,7 @@ public class handButton : XRBaseInteractable
             else if (discCon.GetIsPlaying())
             {
                 discCon.StopBoth();
-                Debug.Log("stopping music");
+                Debug.Log("stopping music"); 
                 isPlaySound = true;
                 ac.SetBool("isDance", false);
                 ac.SetBool("IsIdle", true);
