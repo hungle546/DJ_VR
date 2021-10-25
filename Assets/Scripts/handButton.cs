@@ -16,10 +16,11 @@ public class handButton : XRBaseInteractable
     private float ymin = 0.0f;
     private float ymax = 0.0f;
     private bool isPlaySound = false;
-    private Animator ac; 
+    [SerializeField] private AudienceController audC;
 
-    [SerializeField] private DiscController discCon;
-    [SerializeField] private GameObject crowd;
+
+        [SerializeField] private DiscController discCon;
+   
 
     protected override void OnHoverEntered(HoverEnterEventArgs args)
     {
@@ -52,7 +53,7 @@ public class handButton : XRBaseInteractable
 
     void Start()
     {
-        ac = crowd.GetComponent<Animator>();
+       
         setMinMax();
     }
 
@@ -114,9 +115,7 @@ public class handButton : XRBaseInteractable
                 discCon.PlayBoth();
                 Debug.Log("starting music");
                 isPlaySound = true;
-                ac.SetInteger("DanceIndex", Random.Range(0,3));
-                ac.SetBool("isDance", true);
-                ac.SetBool("IsIdle", false);
+                audC.ButtonPlayed();
                 StartCoroutine("PressDelay");
             }
             else if (discCon.GetIsPlaying())
@@ -124,8 +123,7 @@ public class handButton : XRBaseInteractable
                 discCon.StopBoth();
                 Debug.Log("stopping music"); 
                 isPlaySound = true;
-                ac.SetBool("isDance", false);
-                ac.SetBool("IsIdle", true);
+                audC.MusicOff();
                 StartCoroutine("PressDelay");
             }
         }
