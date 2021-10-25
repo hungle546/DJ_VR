@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Aud1Controller : MonoBehaviour
+public class AudienceController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject aud1;
