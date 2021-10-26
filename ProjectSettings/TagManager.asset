@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - AUD1
+  - AUD2
+  - AUD3
   layers:
   - Default
   - TransparentFX
