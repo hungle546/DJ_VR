@@ -7,6 +7,7 @@ TagManager:
   - AUD1
   - AUD2
   - AUD3
+  - Slider
   layers:
   - Default
   - TransparentFX

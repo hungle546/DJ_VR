@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public AudioSource buttonSound1;
-
     //NOTE: XR Hand Controllers can only be one or the other: direct interaction or ray interaction
     //For MainMenu, left and right controllers are ray interaction.
     //In DJ Scene, left and right controllers are direct interaction.
+
+    public AudioSource buttonSound1;
 
     public void PlayGame()
     {
@@ -26,4 +27,6 @@ public class MainMenu : MonoBehaviour
         Debug.Log("QUIT");
         Application.Quit();
     }
+
+    
 }
