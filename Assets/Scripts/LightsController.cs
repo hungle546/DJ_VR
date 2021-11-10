@@ -9,8 +9,8 @@ public class LightsController : XRBaseInteractable
     [SerializeField] private GameObject crowdSpotLight;
     [SerializeField] private GameObject djSpotlight;
     [SerializeField] private GameObject spotlight;
-    
-    
+
+    private bool ispressed = false;
     public UnityEvent onPress = null;
     private bool previousPressed = false;
     private float previousHandHeight = 0.9f;
@@ -100,22 +100,29 @@ public class LightsController : XRBaseInteractable
             onPress.Invoke();
         }
 
-        if (!isLightoff)
+        if (!ispressed)
         {
-            turnLightsOff();
-            StartCoroutine("PressDelay");
+            if (!isLightoff)
+            {
+                turnLightsOff();
+                StartCoroutine("PressDelay");
+                ispressed = true;
+            }
+            else if (isLightoff)
+            {
+                turnLightsOn();
+                StartCoroutine("PressDelay");
+                ispressed = true;
+            }
         }
-        else if (isLightoff)
-        {
-            turnLightsOn();
-            StartCoroutine("PressDelay");
-        }
+
         previousPressed = inPosition;
     }
 
     private IEnumerator PressDelay()
     {
         yield return new WaitForSeconds(2f);
+        ispressed = false;
     }
 
     private bool inPosition()
@@ -134,13 +141,11 @@ public class LightsController : XRBaseInteractable
     }
     private void turnLightsOn()
     {
-        if (!isLightoff)
-        {
+        
             crowdSpotLight.SetActive(true);
             djSpotlight.SetActive(true);
             spotlight.SetActive(true);
             isLightoff = false;
-        }
     }
     
 
