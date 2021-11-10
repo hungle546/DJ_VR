@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.49
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.29369357, g: 0.29387784, b: 0.29374918, a: 0.49}
+  m_IndirectSpecularColor: {r: 0.29369387, g: 0.29387808, b: 0.2937494, a: 0.49}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -29353,6 +29353,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3936195837475319286, guid: f8caad757b03bdf449c25e3663d16ea9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d1a754c39dddf664798fc88ff620afee, type: 2}
     - target: {fileID: 3936195837475319292, guid: f8caad757b03bdf449c25e3663d16ea9,
         type: 3}
       propertyPath: m_RootOrder
@@ -29365,23 +29370,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3936195837475319292, guid: f8caad757b03bdf449c25e3663d16ea9,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936195837475319292, guid: f8caad757b03bdf449c25e3663d16ea9,
+        type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.08999999
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 3936195837475319292, guid: f8caad757b03bdf449c25e3663d16ea9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.0058184
+      value: 4.043
       objectReference: {fileID: 0}
     - target: {fileID: 3936195837475319292, guid: f8caad757b03bdf449c25e3663d16ea9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.76849747
+      value: -0.757
       objectReference: {fileID: 0}
     - target: {fileID: 3936195837475319292, guid: f8caad757b03bdf449c25e3663d16ea9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.57526
+      value: -6.884
       objectReference: {fileID: 0}
     - target: {fileID: 3936195837475319292, guid: f8caad757b03bdf449c25e3663d16ea9,
         type: 3}
