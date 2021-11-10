@@ -27,18 +27,18 @@ public class AudienceController : MonoBehaviour
         randomLoc();
         Debug.Log("sup!");
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 13; i++)
         {
             randomLoc();
             Instantiate(aud1, quadrants[i%3], aud1.transform.rotation); 
         }
         
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 13; i++)
         {
             randomLoc();
             Instantiate(aud2, quadrants[i%3], aud2.transform.rotation);
         }
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 13; i++)
         {
             randomLoc();
             Instantiate(aud3, quadrants[i%3], aud3.transform.rotation);
@@ -104,8 +104,8 @@ public class AudienceController : MonoBehaviour
 
     private void randomLoc()
     {
-        quadrants[0] = new Vector3(Random.Range(-9, 9), 0f, Random.Range(0, 25)); 
-        quadrants[1] = new Vector3(Random.Range(-9, 9), 0f, Random.Range(0, 25)); 
-        quadrants[2] = new Vector3(Random.Range(-9, 9), 0f, Random.Range(0, 25));
+        quadrants[0] = new Vector3(Random.Range(-2, 4), 0f, Random.Range(0, 10)); 
+        quadrants[1] = new Vector3(Random.Range(-10, 10), 0f, Random.Range(10, 15)); 
+        quadrants[2] = new Vector3(Random.Range(-7, 7), 0f, Random.Range(5, 10));
     }
 }
