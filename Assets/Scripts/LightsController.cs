@@ -94,23 +94,28 @@ public class LightsController : XRBaseInteractable
     private void CheckPress()
     {
         AudioSource sound = GetComponent<AudioSource>();
-        
         bool inPosition = this.inPosition();
-
         if (inPosition && inPosition != previousPressed)
         {
             onPress.Invoke();
         }
-        turnLightsOff();
-        turnLightsOn();
-        StartCoroutine("PressDelay");
+
+        if (!isLightoff)
+        {
+            turnLightsOff();
+            StartCoroutine("PressDelay");
+        }
+        else if (isLightoff)
+        {
+            turnLightsOn();
+            StartCoroutine("PressDelay");
+        }
         previousPressed = inPosition;
     }
 
     private IEnumerator PressDelay()
     {
         yield return new WaitForSeconds(2f);
-        isLightoff = false;
     }
 
     private bool inPosition()
@@ -125,7 +130,7 @@ public class LightsController : XRBaseInteractable
         crowdSpotLight.SetActive(false);
         djSpotlight.SetActive(false);
         spotlight.SetActive(false);
-        isLightoff = false;
+        isLightoff = true;
     }
     private void turnLightsOn()
     {
@@ -134,8 +139,7 @@ public class LightsController : XRBaseInteractable
             crowdSpotLight.SetActive(true);
             djSpotlight.SetActive(true);
             spotlight.SetActive(true);
-            isLightoff = true;
-            StartCoroutine("PressDelay");
+            isLightoff = false;
         }
     }
     
