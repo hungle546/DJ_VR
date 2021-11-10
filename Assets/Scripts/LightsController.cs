@@ -102,14 +102,9 @@ public class LightsController : XRBaseInteractable
             onPress.Invoke();
         }
         turnLightsOff();
-        
-        previousPressed = inPosition;
-        
-        Debug.Log("button Pressed");
-        Debug.Log(isLightoff);
-        
         turnLightsOn();
-
+        StartCoroutine("PressDelay");
+        previousPressed = inPosition;
     }
 
     private IEnumerator PressDelay()
@@ -130,10 +125,11 @@ public class LightsController : XRBaseInteractable
         crowdSpotLight.SetActive(false);
         djSpotlight.SetActive(false);
         spotlight.SetActive(false);
+        isLightoff = false;
     }
     private void turnLightsOn()
     {
-        if (isLightoff)
+        if (!isLightoff)
         {
             crowdSpotLight.SetActive(true);
             djSpotlight.SetActive(true);
