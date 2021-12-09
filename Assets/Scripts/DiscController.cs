@@ -24,7 +24,11 @@ public class DiscController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isPlaying)
+        {
+            SpinLeft();
+            SpinRight();
+        }
     }
 
     public void SpinLeft()
@@ -53,8 +57,6 @@ public class DiscController : MonoBehaviour
     {
         PlayLeft();
         PlayRight();
-        SpinLeft();
-        SpinRight();
         isPlaying = true;
     }
 
@@ -69,6 +71,7 @@ public class DiscController : MonoBehaviour
     {
         leftAudio.volume = 0f;
         rightAudio.volume = 0.7f;
+        Debug.Log("Hiii");
     }
     
     public void MuteRight()

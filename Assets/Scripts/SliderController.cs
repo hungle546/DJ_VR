@@ -26,7 +26,7 @@ public class SliderController : MonoBehaviour
             //Debug.Log("left side");
             discCon.MuteRight();
         }
-        else if (transform.localPosition.x > 0.475 && transform.localPosition.x < 0.5)
+        else if (transform.localPosition.x > 0.474 && transform.localPosition.x < 0.5)
         {
             //Debug.Log("right side "+ transform.localPosition.x);
             discCon.MuteLeft();
