@@ -9,7 +9,7 @@ public class LightsController : XRBaseInteractable
     [SerializeField] private GameObject crowdSpotLight;
     [SerializeField] private GameObject djSpotlight;
     [SerializeField] private GameObject spotlight;
-
+    [SerializeField] private GameObject crowdSpotLight2;
     private bool ispressed = false;
     public UnityEvent onPress = null;
     private bool previousPressed = false;
@@ -137,6 +137,7 @@ public class LightsController : XRBaseInteractable
         crowdSpotLight.SetActive(false);
         djSpotlight.SetActive(false);
         spotlight.SetActive(false);
+        crowdSpotLight2.SetActive(false);
         isLightoff = true;
     }
     private void turnLightsOn()
@@ -145,6 +146,7 @@ public class LightsController : XRBaseInteractable
             crowdSpotLight.SetActive(true);
             djSpotlight.SetActive(true);
             spotlight.SetActive(true);
+            crowdSpotLight2.SetActive(true);
             isLightoff = false;
     }
     
