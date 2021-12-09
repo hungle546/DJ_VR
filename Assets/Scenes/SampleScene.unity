@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.49
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.29369387, g: 0.29387808, b: 0.2937494, a: 0.49}
+  m_IndirectSpecularColor: {r: 0.29369357, g: 0.29387784, b: 0.29374918, a: 0.49}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6121,7 +6121,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.5, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.91398144, y: 2.9798672, z: -7.393741}
+  m_ConnectedAnchor: {x: 0.91398144, y: 3.2502987, z: -7.393741}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 0, z: 0}
   m_XMotion: 1
@@ -31179,7 +31179,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1.0769997, y: 2.9959195, z: -7.1665454}
+  m_ConnectedAnchor: {x: 1.0769997, y: 3.266351, z: -7.1665454}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -31398,7 +31398,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 694a6f89ef4df634b86630030495a620, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d13bb69e99de732419efaf420fdd5dfa, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
@@ -32124,7 +32124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824706808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.251321, y: -28.771431, z: 20.894964}
+  m_LocalPosition: {x: -11.251321, y: -28.574, z: 20.894964}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 609383827}
@@ -32394,7 +32394,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 846d79ba2e3e9c044a54fcccee123adf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: aece9cbf5213dda4aaefeca365db7d09, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
