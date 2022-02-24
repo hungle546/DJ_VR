@@ -23,6 +23,7 @@ public class ColorChanger : MonoBehaviour
     {
         interactable.onHoverEntered.RemoveListener(SetSelectMaterial);
         interactable.onHoverExited.RemoveListener(SetOriginalMaterial);
+        //test
     }
 
     private void SetSelectMaterial(XRBaseInteractor interactor)
